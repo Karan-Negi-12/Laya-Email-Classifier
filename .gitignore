@@ -20,7 +20,6 @@ dist/
 htmlcov/
 
 # Generated application output
-data/prediction.json
 
 # Local secrets and environment overrides
 .env

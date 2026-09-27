@@ -1,0 +1,32 @@
+{
+  "files": {
+    "mails": "data/mails.json",
+    "predictions": "data/prediction.json",
+    "log_directory": "logs"
+  },
+  "alert_threshold": 0.75,
+  "non_alert_threshold": 0.2,
+  "non_alert_storage_probability": 0.2,
+  "max_body_chars": 4000,
+  "router": {
+    "preload": true
+  },
+  "review_api": {
+    "url": "",
+    "timeout_seconds": 30
+  },
+  "questions": {
+    "email_type": {
+      "type": "choice",
+      "instructions": "Is this email an alert or a normal non-alert email?",
+      "criteria": {
+        "alert": "automated or system-generated notification about an incident, failure, outage, threshold breach, security event, monitoring warning, job failure, or anything needing operational attention",
+        "non_alert": "normal human communication, newsletters, meeting invites, approvals, FYI updates, marketing, or general information"
+      }
+    },
+    "is_alert": {
+      "type": "noul",
+      "instructions": "Is this email a system or monitoring alert that signals a problem requiring attention?"
+    }
+  }
+}
